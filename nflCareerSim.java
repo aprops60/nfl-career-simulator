@@ -296,7 +296,7 @@ public class nflCareerSim
         else if (goodColleges.containsKey(yourCollege)) { collegeRating = goodColleges.get(yourCollege); }
         else { collegeRating = midColleges.get(yourCollege); }
         System.out.println(skillRating);
-        while ((yearsPlaying <= 4)&&(hasRedshirted)||(yearsPlaying <= 4))
+        while (yearsPlaying <= 5 || (hasRedshirted && yearsPlaying <= 4))
         {
             passingYards = 0;
             touchdowns = 0;
@@ -328,7 +328,7 @@ public class nflCareerSim
                 statGrade -= 80;
 
             }
-            else if (!redshirt.equals("y")||!(hasRedshirted)) {
+            else if (!redshirt.equals("y") && !hasRedshirted) {
                 if (randomChance <= chanceOfBeingStarter)
                 {
                     System.out.println("You are the starting quarterback!");
